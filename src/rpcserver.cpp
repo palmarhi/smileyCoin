@@ -225,6 +225,7 @@ static const CRPCCommand vRPCCommands[] =
   //  ------------------------  -----------------------  ---------- ---------- ---------
     /* Overall control/query calls */
     { "getinfo",                &getinfo,                true,      false,      false }, /* uses wallet if enabled */
+    { "rolldie",                &rolldie,                true,      false,      false }, /* uses wallet if enabled */
     { "help",                   &help,                   true,      true,       false },
     { "stop",                   &stop,                   true,      true,       false },
 

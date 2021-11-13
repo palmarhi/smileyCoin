@@ -108,6 +108,28 @@ Value getinfo(const Array& params, bool fHelp)
 }
 
 
+Value rolldie(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() != 1)
+        throw runtime_error(
+            "rolldie\n"
+            "Returns an a value between 1 and 6.\n"
+	    "\nArguments:\n"
+	    "	\"string\"	(string, required) Max value.\n"
+            "\nExamples:\n"
+            + HelpExampleCli("rolldie", "6")
+            + HelpExampleRpc("rolldie", "6")
+        );
+    string max_value_string = params[0].get_str();
+    int max_value = stoi(max_value_string);
+    if (max_value < 1)
+    	throw runtime_error(
+	    "Value must be higher than 0"
+	);
+    int result = 1 + rand() % max_value;
+    return result;
+}
+
 Value getrichaddresses(const Array& params, bool fHelp)
 {
 
