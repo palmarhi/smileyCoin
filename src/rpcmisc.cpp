@@ -113,7 +113,7 @@ Value rolldie(const Array& params, bool fHelp)
     if (fHelp || params.size() != 1)
         throw runtime_error(
             "rolldie\n"
-            "Returns an a value between 1 and 6.\n"
+            "Returns an a value between 1 and provided value.\n"
 	    "\nArguments:\n"
 	    "	\"string\"	(string, required) Max value.\n"
             "\nExamples:\n"
